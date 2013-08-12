@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/miya0001/jqueryleapmotion.git"
+    "url": "git://github.com/miya0001/jquery-leapmotion.git"
   },
   "author": "Takayuki Miyauchi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/miya0001/jqueryleapmotion/issues"
+    "url": "https://github.com/miya0001/jquery-leapmotion/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
