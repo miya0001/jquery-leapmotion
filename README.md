@@ -14,7 +14,7 @@ Include the jQuery library (version 1.8.3 or newer), leapjs (version 0.2.0) and 
 
 ## Events
 
-This plugin add custom events.
+This plugin add custom events to the window object.
 If you want to use these events, please place the code like below.
 
 ```html
@@ -34,6 +34,15 @@ If you want to use these events, please place the code like below.
 - focus
 - blur
 
+```html
+<script>
+  $.leapmotion();
+  $(window).bind('deviceConnected', function(e){
+    console.log("Leap Motion Connected");
+  });
+</script>
+```
+
 ### Frame Events
 
 - pointables
@@ -44,6 +53,15 @@ If you want to use these events, please place the code like below.
 - fingersout
 - tools
 - toolsout
+
+```html
+<script>
+  $.leapmotion();
+  $(window).bind('pointables', function(e, frame){
+    console.log("Points are "+frame.pointables.length);
+  });
+</script>
+```
 
 ### Gesture Events
 
@@ -70,6 +88,16 @@ If you want to use these events, please place the code like below.
 - screentapstart
 - screentapupdate
 - screentapstop
+
+```html
+<script>
+  $.leapmotion();
+  $(window).bind('swipestop', function(e, gesture){
+    jQuery("body:first").animate({scrollTop: 0}, 500);
+  });
+</script>
+```
+
 
 ## Changelog
 
