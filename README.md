@@ -20,6 +20,33 @@ Include the jQuery library (version 1.8.3 or newer), leapjs (version 0.2.0) and 
 </script>
 ```
 
+## Events
+
+- Connect
+- deviceConnected
+- deviceDisconnected
+- focus
+- blur
+- pointables
+- pointablesout
+- hands
+- handsout
+- fingers
+- fingersout
+- tools
+- toolsout
+- gesture
+- circle
+- circleright
+- circleleft
+- swipe
+- swipeleft
+- swiperight
+- swipetop
+- swipebottom
+- keytap
+- screentap
+
 ## Changelog
 
 ### Version 0.1.0
