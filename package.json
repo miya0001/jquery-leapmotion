@@ -1,0 +1,22 @@
+{
+  "name": "jqueryleapmotion",
+  "version": "0.1.0",
+  "description": "jQuery plugin for leap motion",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/miya0001/jqueryleapmotion.git"
+  },
+  "author": "Takayuki Miyauchi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miya0001/jqueryleapmotion/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
