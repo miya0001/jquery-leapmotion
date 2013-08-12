@@ -26,11 +26,16 @@ If you want to use these events, please place the code like below.
 </script>
 ```
 
+### Device Events
+
 - Connect
 - deviceConnected
 - deviceDisconnected
 - focus
 - blur
+
+### Frame Events
+
 - pointables
 - pointablesout
 - hands
@@ -39,17 +44,32 @@ If you want to use these events, please place the code like below.
 - fingersout
 - tools
 - toolsout
+
+### Gesture Events
+
 - gesture
 - circle
+- circlestart
+- circleupdate
+- circlestop
 - circleright
 - circleleft
 - swipe
+- swipestart
+- swipeupdate
+- swipestop
 - swipeleft
 - swiperight
 - swipetop
 - swipebottom
 - keytap
+- keytapstart
+- keytapupdate
+- keytapstop
 - screentap
+- screentapstart
+- screentapupdate
+- screentapstop
 
 ## Changelog
 
