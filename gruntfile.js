@@ -2,14 +2,14 @@ module.exports = function(grunt) {
     'use strict';
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
-    meta: {
-      banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-        '<%= pkg.homepage ? "* " + pkg.homepage + "\n" : "" %>' +
-        '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-        ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */'
-    },
         uglify: {
+            options: {
+                banner: "/* jQuery Leap Motion v<%= pkg.version %>\n" +
+                        " * Copyright (c) <%= grunt.template.today('yyyy') %>" +
+                        " <%= pkg.author.name %>\n" +
+                        " * License: <%= pkg.license %>\n" +
+                        " */\n"
+            },
             my_target: {
                 files: {
                     'jquery.leapmotion.min.js': ['jquery.leapmotion.js']

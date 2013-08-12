@@ -10,13 +10,20 @@
     "type": "git",
     "url": "git://github.com/miya0001/jquery-leapmotion.git"
   },
-  "author": "Takayuki Miyauchi",
-  "license": "MIT",
+  "author": {
+    "name": "Takayuki Miyauchi",
+    "url": "http://twitter.com/miya0001"
+  },
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/miya0001/jquery-leapmotion/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2"
+  },
+  "dependencies": {
+    "jquery": ">= 1.8.3",
+    "leapjs": "0.2.0"
   }
 }
