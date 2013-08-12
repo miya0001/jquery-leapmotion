@@ -6,7 +6,7 @@
 
 'use strict';
 
-var is_focus = false;
+var is_focus = true;
 
 $.leapmotion = function(config){
 
