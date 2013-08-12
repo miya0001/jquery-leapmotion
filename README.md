@@ -10,17 +10,21 @@ Include the jQuery library (version 1.8.3 or newer), leapjs (version 0.2.0) and 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="//js.leapmotion.com/0.2.0/leap.min.js"></script>
 <script src="//jqueryleapmotion.s3.amazonaws.com/jquery.leapmotion.min.js"></script>
+```
 
+## Events
+
+This plugin add custom events.
+If you want to use these events, please place the code like below.
+
+```html
 <script>
-  // To attach Backstrech as the body's background
   $.leapmotion();
   $(window).bind('swipe', function(e, gesture){
     console.log(gesture);
   });
 </script>
 ```
-
-## Events
 
 - Connect
 - deviceConnected
