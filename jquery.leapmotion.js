@@ -8,9 +8,9 @@
 
 var is_focus = true;
 
-$.leapmotion = function(config){
+$.extend({leapmotion: function(config){
 
-var defaults = {e: window};
+var defaults = {element: window};
 var options = $.extend(defaults, config);
 
 var controller = new Leap.Controller({
@@ -18,52 +18,52 @@ var controller = new Leap.Controller({
 });
 
 controller.on('connect', function(){
-    $(options.e).trigger('connect');
+    $(options.element).trigger('connect');
 });
 
 controller.on('deviceConnected', function(){
-    $(options.e).trigger('deviceConnected');
+    $(options.element).trigger('deviceConnected');
 });
 
 controller.on('deviceDisconnected', function(){
-    $(options.e).trigger('deviceDisconnected');
+    $(options.element).trigger('deviceDisconnected');
 });
 
 controller.on('focus', function(){
-    $(options.e).trigger('focus');
+    $(options.element).trigger('focus');
 });
 
 controller.on('blur', function(){
-    $(options.e).trigger('blur');
+    $(options.element).trigger('blur');
 });
 
 controller.on('animationFrame', function(obj){
     if (is_focus === true) {
         if (obj.pointables.length) {
-            $(options.e).trigger('pointables', obj);
+            $(options.element).trigger('pointables', obj);
         } else {
-            $(options.e).trigger('pointablesout', obj);
+            $(options.element).trigger('pointablesout', obj);
         }
         if (obj.hands.length) {
-            $(options.e).trigger('hands', obj);
+            $(options.element).trigger('hands', obj);
         } else {
-            $(options.e).trigger('handsout', obj);
+            $(options.element).trigger('handsout', obj);
         }
         if (obj.fingers.length) {
-            $(options.e).trigger('fingers', obj);
+            $(options.element).trigger('fingers', obj);
         } else {
-            $(options.e).trigger('fingersout', obj);
+            $(options.element).trigger('fingersout', obj);
         }
         if (obj.tools.length) {
-            $(options.e).trigger('tools', obj);
+            $(options.element).trigger('tools', obj);
         } else {
-            $(options.e).trigger('toolsout', obj);
+            $(options.element).trigger('toolsout', obj);
         }
         if (obj.gestures.length > 0) {
-            $(options.e).trigger('gesture', obj);
+            $(options.element).trigger('gesture', obj);
             obj.gestures.forEach(function(gesture) {
-                $(options.e).trigger(gesture.type, gesture);
-                $(options.e).trigger(gesture.type + gesture.state, gesture);
+                $(options.element).trigger(gesture.type, gesture);
+                $(options.element).trigger(gesture.type + gesture.state, gesture);
             });
         }
     }
@@ -71,34 +71,34 @@ controller.on('animationFrame', function(obj){
 
 controller.connect();
 
-$(options.e).bind('focus', function(){ is_focus = true; });
-$(options.e).bind('blur', function(){ is_focus = false; });
+$(options.element).bind('focus', function(){ is_focus = true; });
+$(options.element).bind('blur', function(){ is_focus = false; });
 
-$(options.e).bind('circle', function(e, gesture){
+$(options.element).bind('circle', function(e, gesture){
     if (gesture.normal[2] < 0) {
-        $(options.e).trigger('circleright', gesture);
+        $(options.element).trigger('circleright', gesture);
     } else {
-        $(options.e).trigger('circleleft', gesture);
+        $(options.element).trigger('circleleft', gesture);
     }
 });
 
-$(options.e).bind('swipe', function(e, gesture){
+$(options.element).bind('swipe', function(e, gesture){
     var dir = gesture.direction;
     if (Math.abs(dir[0]) > Math.abs(dir[1])) { // horizontal
         if (dir[0] > 0) {
-            $(options.e).trigger('swiperight', gesture);
+            $(options.element).trigger('swiperight', gesture);
         } else {
-            $(options.e).trigger('swipeleft', gesture);
+            $(options.element).trigger('swipeleft', gesture);
         }
     } else if (Math.abs(dir[0]) < Math.abs(dir[1])) { // vertical
         if (dir[1] > 0) {
-            $(options.e).trigger('swipetop', gesture);
+            $(options.element).trigger('swipetop', gesture);
         } else {
-            $(options.e).trigger('swipebottom', gesture);
+            $(options.element).trigger('swipebottom', gesture);
         }
     }
 });
 
-}; // end function
+}}); // end extend function
 
 })(jQuery);
