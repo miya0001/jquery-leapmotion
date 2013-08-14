@@ -46,31 +46,31 @@ $.extend({
             $(options.element).trigger('blur');
         });
 
-        controller.on('animationFrame', function(obj){
+        controller.on('animationFrame', function(frame){
             if (is_focus === true) {
-                if (obj.pointables.length) {
-                    $(options.element).trigger('pointables', obj);
+                if (frame.pointables.length) {
+                    $(options.element).trigger('pointables', frame);
                 } else {
-                    $(options.element).trigger('pointablesout', obj);
+                    $(options.element).trigger('pointablesout', frame);
                 }
-                if (obj.hands.length) {
-                    $(options.element).trigger('hands', obj);
+                if (frame.hands.length) {
+                    $(options.element).trigger('hands', frame);
                 } else {
-                    $(options.element).trigger('handsout', obj);
+                    $(options.element).trigger('handsout', frame);
                 }
-                if (obj.fingers.length) {
-                    $(options.element).trigger('fingers', obj);
+                if (frame.fingers.length) {
+                    $(options.element).trigger('fingers', frame);
                 } else {
-                    $(options.element).trigger('fingersout', obj);
+                    $(options.element).trigger('fingersout', frame);
                 }
-                if (obj.tools.length) {
-                    $(options.element).trigger('tools', obj);
+                if (frame.tools.length) {
+                    $(options.element).trigger('tools', frame);
                 } else {
-                    $(options.element).trigger('toolsout', obj);
+                    $(options.element).trigger('toolsout', frame);
                 }
-                if (obj.gestures.length > 0) {
-                    $(options.element).trigger('gesture', obj);
-                    obj.gestures.forEach(function(gesture) {
+                if (frame.gestures.length > 0) {
+                    $(options.element).trigger('gesture', frame);
+                    frame.gestures.forEach(function(gesture) {
                         $(options.element).trigger(gesture.type, gesture);
                         $(options.element).trigger(
                             gesture.type + gesture.state,
