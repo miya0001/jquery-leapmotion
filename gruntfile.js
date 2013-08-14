@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         pkg : grunt.file.readJSON('package.json'),
         uglify: {
             options: {
-                banner: "/* jQuery Leap Motion v<%= pkg.version %>\n" +
+                banner: "/* jQuery Leap Motion <%= pkg.version %>\n" +
                         " * Copyright (c) <%= grunt.template.today('yyyy') %>" +
                         " <%= pkg.author.name %>\n" +
                         " * License: <%= pkg.license %>\n" +
