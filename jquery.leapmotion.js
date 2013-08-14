@@ -7,10 +7,15 @@ $.extend({
     leapmotion: function(config){
 
         var is_focus = true;
-        var defaults = {element: window};
+        var defaults = {
+            element: window,
+            cursorSpeed: 1.5
+        };
         var options = $.extend(defaults, config);
 
-        var lm = new leapMotion();
+        var lm = new leapMotion({
+            cursorSpeed: options.cursorSpeed
+        });
 
         Leap.Frame.prototype.pointerOffset = function(){
             var pointers = [];
@@ -120,8 +125,13 @@ $.extend({
 
 }); // end extend
 
-var leapMotion = function()
+var leapMotion = function(config)
 {
+    var defaults = {
+        cursorSpeed: 1.5
+    };
+
+    this.options = $.extend(defaults, config);
 }
 
 leapMotion.prototype.getOffset = function(interectionBox, vector)
@@ -137,13 +147,13 @@ leapMotion.prototype.getOffset = function(interectionBox, vector)
 
     var px = 0;
     if (w > h) {
-        px = w  / (center * 2);
+        px = w  / (center * 2) * this.options.cursorSpeed;
     } else {
-        px = h / (center * 2);
+        px = h / (center * 2) * this.options.cursorSpeed;
     }
 
     var posleft = (w / 2) + (px * x * 2);
-    var postop = (center * px) + (h - (px * y) - (h / 2)) + center;
+    var postop = (h / 2) + ((center - y) * px);
 
     return {
         top: postop,
