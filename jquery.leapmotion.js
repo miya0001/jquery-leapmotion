@@ -154,7 +154,7 @@ leapMotion.prototype.getOffset = function(interectionBox, vector)
         px = h / (center * 2) * this.options.cursorSpeed;
     }
 
-    var posleft = (w / 2) + (px * x * 2);
+    var posleft = (w / 2) + (px * x);
     var postop = (h / 2) + ((center - y) * px);
 
     return {
