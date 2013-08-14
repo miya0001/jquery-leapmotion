@@ -121,6 +121,8 @@ $.extend({
             }
         });
 
+        return $(options.element);
+
     } // end function
 
 }); // end extend
