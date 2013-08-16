@@ -1,6 +1,6 @@
 {
   "name": "jquery-leapmotion",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "jQuery plugin for leap motion",
   "main": "gruntfile.js",
   "scripts": {
