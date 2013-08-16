@@ -96,7 +96,7 @@ $.extend({
             is_focus = false;
         });
 
-        $(options.element).bind('circle', function(e, gesture){
+        $(options.element).bind('circlestart', function(e, gesture){
             if (gesture.normal[2] < 0) {
                 $(options.element).trigger('circleright', gesture);
             } else {
@@ -104,7 +104,7 @@ $.extend({
             }
         });
 
-        $(options.element).bind('swipe', function(e, gesture){
+        $(options.element).bind('swipestart', function(e, gesture){
             var dir = gesture.direction;
             if (Math.abs(dir[0]) > Math.abs(dir[1])) { // horizontal
                 if (dir[0] > 0) {
