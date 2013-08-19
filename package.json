@@ -1,6 +1,6 @@
 {
   "name": "jquery-leapmotion",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "jQuery plugin for leap motion",
   "main": "gruntfile.js",
   "scripts": {
@@ -10,10 +10,7 @@
     "type": "git",
     "url": "git://github.com/miya0001/jquery-leapmotion.git"
   },
-  "author": {
-    "name": "Takayuki Miyauchi",
-    "url": "http://twitter.com/miya0001"
-  },
+  "author": "miya0001 <miya@wpist.me>",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/miya0001/jquery-leapmotion/issues"
