@@ -28,7 +28,7 @@ If you want to use these events, please place the code like below.
 
 ### Device Events
 
-- Connect
+- connect
 - deviceConnected
 - deviceDisconnected
 - focus
